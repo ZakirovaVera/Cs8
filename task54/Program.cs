@@ -72,21 +72,3 @@ void SortRowsInDescendingOrder(int[,] inArray)
         }
     }
 }
-
-// void SelectionSort2(int[,] inArray)
-// {
-//     for (int i = 0; i < inArray.GetLength(0); i++)
-//     {
-//         var minJ = 0;
-//         for (int k = 0; k < inArray.GetLength(1); k++)
-//         {            
-//             if (inArray[i, k] > inArray[i, minJ])
-//             {
-//                 int temp = inArray[i, k];
-//                 inArray[i, k] = inArray[i, minJ];
-//                 inArray[i, minJ] = temp;
-//                 minJ = k;
-//             }
-//         }
-//     }
-// }
