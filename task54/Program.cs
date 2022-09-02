@@ -54,19 +54,20 @@ void PrintArray(int[,] inArray)
     }
 }
 
+//сортировка строк по убыванию
 void SortRowsInDescendingOrder(int[,] inArray)
 {
-    for (int i = 0; i < inArray.GetLength(0); i++)
+    for (int row = 0; row < inArray.GetLength(0); row++)
     {
         for (int k = 0; k < inArray.GetLength(1); k++)
         {
-            for (int j = 0; j < inArray.GetLength(1) - 1; j++)
+            for (int column = 0; column < inArray.GetLength(1) - 1; column++)
             {
-                if (inArray[i, j] < inArray[i, j + 1])
+                if (inArray[row, column] < inArray[row, column + 1])
                 {
-                    int temp = inArray[i, j];
-                    inArray[i, j] = inArray[i, j + 1];
-                    inArray[i, j + 1] = temp;
+                    int temp = inArray[row, column];
+                    inArray[row, column] = inArray[row, column + 1];
+                    inArray[row, column + 1] = temp;
                 }
             }
         }

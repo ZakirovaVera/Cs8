@@ -3,18 +3,9 @@
 
 Console.Clear();
 
-int rows = GetNumberFromUser("Введите число строк массива: ", "Ошибка ввода!");
-int columns = GetNumberFromUser("Введите число столбцов массива: ", "Ошибка ввода!");
-int startArray = GetNumberFromUser("Введите минимальное число массива: ", "Ошибка ввода!");
-int endArray = GetNumberFromUser("Введите максимальное число массива: ", "Ошибка ввода!");
-int[,] arrayFirst = GetArray(rows, columns, startArray, endArray);
+int[,] arrayFirst = InputDataWithArrayFilling();
 
-
-rows = GetNumberFromUser("Введите число строк массива: ", "Ошибка ввода!");
-columns = GetNumberFromUser("Введите число столбцов массива: ", "Ошибка ввода!");
-startArray = GetNumberFromUser("Введите минимальное число массива: ", "Ошибка ввода!");
-endArray = GetNumberFromUser("Введите максимальное число массива: ", "Ошибка ввода!");
-int[,] arrayTwo = GetArray(rows, columns, startArray, endArray);
+int[,] arrayTwo = InputDataWithArrayFilling();
 
 PrintArray(arrayFirst);
 Console.WriteLine();
@@ -24,7 +15,18 @@ Console.WriteLine();
 int[,] arrayResult = Matrix(arrayFirst, arrayTwo);
 PrintArray(arrayResult);
 
+//входные данные с заполнением массива
+int[,] InputDataWithArrayFilling()
+{
+    int rows = GetNumberFromUser("Введите число строк массива: ", "Ошибка ввода!");
+    int columns = GetNumberFromUser("Введите число столбцов массива: ", "Ошибка ввода!");
+    int startArray = GetNumberFromUser("Введите минимальное число массива: ", "Ошибка ввода!");
+    int endArray = GetNumberFromUser("Введите максимальное число массива: ", "Ошибка ввода!");
 
+    return GetArray(rows, columns, startArray, endArray);
+}
+
+//ввод данных с клавиатуры
 int GetNumberFromUser(string message, string errorMessage)
 {
     while (true)

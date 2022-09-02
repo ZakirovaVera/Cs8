@@ -22,16 +22,7 @@ Console.WriteLine();
 
 int[] rowMinSum = FindRowsWithMinimumSum(array);
 
-
 Console.WriteLine($"[{String.Join(", ", rowMinSum)}]");
-
-
-
-
-
-
-
-
 
 bool RectangularArray(int numberRows, int numberColumns)
 {
@@ -77,6 +68,7 @@ void PrintArray(int[,] inArray)
     }
 }
 
+//сумма строки с минимальной суммой элементов
 int[] FindRowsWithMinimumSum(int[,] inArray)
 {
     int minSum = 0;
@@ -93,19 +85,21 @@ int[] FindRowsWithMinimumSum(int[,] inArray)
             currentArray[j] = inArray[i, j];
             sum += inArray[i, j];
         }
+
         if (isMinSumEmpty)
         {
-            minSum = sum;
             isMinSumEmpty = false;
+
+            minSum = sum;            
+            arrayMinRow = currentArray;
         }
         if (sum < minSum)
-        {
-            arrayMinRow = currentArray;
+        {            
             minSum = sum;
+            arrayMinRow = currentArray;
         }
     }
     Console.WriteLine(minSum);
 
     return arrayMinRow;
 }
-
